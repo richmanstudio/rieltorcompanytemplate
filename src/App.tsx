@@ -1,4 +1,3 @@
-// src/App.tsx
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { NavBar } from './components/Layout/NavBar'
@@ -9,16 +8,12 @@ import './index.css'
 const App: React.FC = () => (
   <BrowserRouter>
     <div className="min-h-screen flex flex-col">
+      {/* NavBar фиксирован и занимает высоту 4rem (h-16) */}
       <NavBar />
-
-      {/* 
-        Тут контейнер с фоном полупрозрачного «стекла»,
-        чтобы на градиенте текст и секции смотрелись контрастно 
-      */}
-      <main className="flex-1 pt-16 px-4 sm:px-6 lg:px-8 bg-black/30 backdrop-blur-lg">
+      {/* main с внутренними отступами и отступом сверху под NavBar */}
+      <main className="flex-1 pt-16 px-4 sm:px-6 lg:px-8">
         <Router />
       </main>
-
       <Footer />
     </div>
   </BrowserRouter>

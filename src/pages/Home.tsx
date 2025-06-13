@@ -1,5 +1,3 @@
-// src/pages/Home.tsx
-
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
@@ -66,11 +64,15 @@ const Home: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="
+          relative h-screen flex items-center justify-center overflow-hidden
+          -mt-16                   /* поднимаем Hero под NavBar */
+          -mx-4 sm:-mx-6 lg:-mx-8   /* убираем боковые отступы main */
+        "
       >
         {/* Фон */}
         <div
-          className="absolute inset-0 bg-cover bg-center scale-110"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
               "url('https://upload.wikimedia.org/wikipedia/commons/e/e4/%D0%A3%D1%81%D1%81%D1%83%D1%80%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D0%B1%D1%83%D0%BB%D1%8C%D0%B2%D0%B0%D1%80.jpg')",
@@ -92,7 +94,8 @@ const Home: React.FC = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-10 flex flex-col md:flex-row items-center gap-4 bg-white/20 backdrop-blur-md rounded-3xl p-4"
+            className="mt-10 flex flex-col md:flex-row items-center gap-4
+                       bg-white/20 backdrop-blur-md rounded-3xl p-4"
           >
             <Input
               placeholder="Район (например, Центральный)"
@@ -146,7 +149,7 @@ const Home: React.FC = () => {
       </motion.section>
 
       {/* Рекомендуемые объекты */}
-      <section className="max-w-7xl mx-auto px-4 space-y-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <h2 className="text-3xl font-bold text-white drop-shadow-md">
           Рекомендуемые объекты
         </h2>

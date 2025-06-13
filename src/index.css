@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  @apply m-0 p-0 h-full;
+}
+
+body {
+  /* красивый глубокий градиент */
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700;
+}
